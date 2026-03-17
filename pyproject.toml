@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "maestro-analyze"
+version = "0.2.0"
+description = "Analyze everything, for agents. Personal data analysis engine with DuckDB."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Maestro AI", email = "hello@maestro.onl"}]
+keywords = ["agent", "data-analysis", "duckdb", "visualization", "cli", "personal-bi"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "duckdb>=1.1",
+    "pandas>=2.2",
+    "plotly>=5.22",
+    "typer>=0.12",
+    "rich>=13.7",
+    "tomli>=2.0; python_version<'3.11'",
+]
+
+[project.urls]
+Homepage = "https://maestro.onl"
+Repository = "https://github.com/maestro-ai-stack/maestro-analyze"
+
+[project.scripts]
+maestro-analyze = "maestro_analyze.cli:app"
+manalyze = "maestro_analyze.cli:app"
+
+[project.optional-dependencies]
+ml = ["scikit-learn>=1.5", "scipy>=1.13"]
+polars = ["polars>=1.0"]
+all = ["maestro-analyze[ml]", "maestro-analyze[polars]"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/maestro_analyze"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
