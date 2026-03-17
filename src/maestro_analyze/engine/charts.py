@@ -28,11 +28,9 @@ chart_registry = Registry("charts")
 
 
 def _register_builtins() -> None:
-    from maestro_analyze.engine.chart_builders.basic import __all_charts__ as basic
-    from maestro_analyze.engine.chart_builders.advanced import __all_charts__ as advanced
-    from maestro_analyze.engine.chart_builders.statistical import __all_charts__ as stats
-    for cls in basic + advanced + stats:
-        chart_registry.register(cls)
+    from maestro_analyze.engine.chart_builders import charts as _cb_registry
+    for name in _cb_registry.names():
+        chart_registry.register(_cb_registry.get(name))
 
 
 _register_builtins()
