@@ -1,3 +1,3 @@
-# maestro-analyst
+# maestro-analyze
 
 Analyze everything, for agents.

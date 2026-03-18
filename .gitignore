@@ -7,3 +7,10 @@ build/
 *.duckdb
 *.duckdb.wal
 .maestro-analyst/
+.env*
+.venv/
+venv/
+.DS_Store
+.vscode/
+.idea/
+node_modules/

@@ -1,7 +1,5 @@
 # maestro-analyst Plugin Architecture Refactor
 
-> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
-
 **Goal:** 将 charts 和 analyzers 重构为插件注册表架构，支持用户自定义扩展。
 
 **Architecture:** Chart 和 Analyzer 各有一个 Registry，内置类型通过 `register()` 注册，用户扩展放 `~/.maestro/analyst/plugins/` 自动发现加载。所有图表构建器实现 `ChartBuilder` 协议，所有分析策略实现 `AnalysisStrategy` 协议。CLI 不变，内部路由到 Registry。
