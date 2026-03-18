@@ -1,18 +1,9 @@
 ---
 name: maestro-analyze
-description: >
-  General-purpose data analysis and visualization engine for agents.
-  26 chart types (bar, line, scatter, histogram, pie, box, table, bubble,
-  sankey, treemap, wordcloud, radar, heatmap, distribution, funnel,
-  bump, heatmap_grid, lollipop, event_timeline, slope, sparkline,
-  event_band, stacked_area, bland_altman, coverage_matrix, trust_radar).
-  Plugin architecture — add custom chart types via ~/.maestro/analyst/plugins/charts/.
-  DuckDB backend for data ingestion. 4 analysis strategies (profile, compare,
-  trend, funnel). CLI: manalyze.
-  Triggers on: chart, visualization, plot, graph, dashboard, heatmap, scatter,
-  bar chart, line chart, treemap, bump chart, sparkline, bland-altman,
-  coverage matrix, stacked area, event timeline, lollipop, slope chart,
-  data visualization, dataviz, analyze data, data profile, data trend.
+description: |
+  Analyze data and generate 26+ chart types via manalyze CLI (DuckDB backend, plugin architecture).
+  Triggers: chart, visualization, manalyze, dashboard, 图表, 可视化.
+  Do NOT use for: econometric regression → maestro-economics.
 ---
 
 # Maestro Analyze
